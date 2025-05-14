@@ -1,30 +1,74 @@
 # AnimalProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+## 🐾 Exercise Overview
 
-# Tasks
+Your task is to extend this Angular project by implementing two basic services to fetch cat and dog facts, and then creating a reusable component to display these facts. Make sure to structure the solution in a scalable and extensible way.
 
-- have a quick overview of the project structure
-- get familiar with [CatService](./src/app/services/cat.service.ts) and [DogService](./src/app/services/dog.service.ts) services as well as [CatFact](./src/app/models/cat-fact.ts), [CatFactsResponse](./src/app/models/cat-facts-response.ts), [DogFact](./src/app/models/dog-fact.ts) and [DogFactsResponse](./src/app/models/dog-facts-response.ts) interfaces
-- create reusable `AnimalFactList` component in `src/app/components/animal-fact-list` directory
-- `AnimalFactList` component should be able to display a list of animal facts coming from different fact services e.g. [CatService](./src/app/services/cat.service.ts) or [DogService](./src/app/services/dog.service.ts)
-- created component should be independent from specific fact services as their number will grow in the future
-- in `App` component you will find [Button toggle](https://material.angular.io/components/button-toggle/overview) component with cat facts and dog facts options, using created `AnimalFactList` component display each fact list when toggle state changes. You can use any known method to provide correct fact services for `AnimalFactList` component however using Strategy design pattern is preferred
-- add unit tests to cover functionalities in selected components/services
+## ✅ Tasks
 
-# Resources
-## Development server
+1. **Explore the Codebase**
+   - Familiarize yourself with the general project structure.
+   - Review the following services and models:
+     - Services: [CatService](./src/app/services/cat.service.ts), [DogService](./src/app/services/dog.service.ts)
+     - Models: [CatFact](./src/app/models/cat-fact.ts), [CatFactsResponse](./src/app/models/cat-facts-response.ts), [DogFact](./src/app/models/dog-fact.ts), [DogFactsResponse](./src/app/models/dog-facts-response.ts)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. **Implement Animal Fact Service(s)**
+   - Implement at least one of the animal fact services: [CatService](./src/app/services/cat.service.ts) or [DogService](./src/app/services/dog.service.ts) (preferable the `CatService`).
+   - Ensure the service fetches facts from an appropriate API and returns them in the expected format.
 
-## Code scaffolding
+3. **Create a Reusable Component**
+   - Create a new `AnimalFactList` component in the directory:  
+     `src/app/components/animal-fact-list`
+   - This component should be capable of displaying a list of animal facts.
+   - It should work with any fact-providing service (e.g., CatService, DogService).
+   - **Important:** The component must remain decoupled from specific services to allow for future extensibility.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4. **Integrate the Component**
+   - Use the `AnimalFactList` component to display the appropriate facts based on the selected toggle state (already present in the `AppComponent`).
+   - You can use any suitable method to inject the right service—but using the **Strategy Design Pattern** is preferred.
 
-## Running unit tests
+5. **Write Unit Tests**
+   - Add tests to verify the functionality of:
+     - The `AnimalFactList` component
+     - Any logic used to switch between services
+     - Relevant services and models
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## ⚙️ Requirements
 
-## Further help
+Make sure you have the following installed:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Node.js** (v18 or higher)
+- **npm** (v9 or higher)
+- **Angular CLI** (v17.0.5)
+- **Git** (to clone the repository)
+
+## 🚀 Development
+
+### Run the App
+
+```bash
+ng serve
+```
+
+Navigate to: [http://localhost:4200](http://localhost:4200). The application will automatically reload when you make changes.
+
+### Generate Code
+
+Use Angular CLI to generate components, services, pipes, directives and more:
+
+```bash
+ng generate component|directive|pipe|service|class|guard|interface|enum|module
+```
+
+### Run Tests
+
+To execute the unit tests with [Karma](https://karma-runner.github.io):
+
+```bash
+ng test
+```
+
+## 📚 Resources
+
+- [Angular CLI Documentation](https://angular.io/cli)
+- [Angular Material - Button Toggle](https://material.angular.io/components/button-toggle/overview)
